@@ -1,0 +1,21 @@
+html, body {
+    margin: 0;
+    height: 100%;
+    overflow: hidden
+}
+
+.mainFlex
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+.gameBox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 400px;
+    height: 400px;
+}
