@@ -1,7 +1,11 @@
 html, body {
     margin: 0;
     height: 100%;
-    overflow: hidden
+    overflow: hidden;
+    /*background-color: #93A392;*/
+    background-color: #90D7FF;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
 }
 
 .mainFlex
@@ -10,12 +14,27 @@ html, body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
+    flex-direction: column;
+    text-align: left;
 }
 .gameBox{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+    width: 410px;
+    height: 408px;
+    box-shadow: 0 0 3em grey;
+}
+
+.singleBox{
+    border: black  solid 1px;
+}
+
+.scoreBox{
     width: 400px;
-    height: 400px;
+}
+
+.buttonStyle{
+    float: right;
 }

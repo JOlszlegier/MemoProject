@@ -26,12 +26,12 @@ const deckArray = [
             img: 'Parrots100.jpg'
         },
         {
-            name:'squirrel',
-            img: 'squirrel100.jpg'
+            name:'dino',
+            img: 'dino100.jpg'
         },
         {
-            name:'squirrel',
-            img: 'squirrel100.jpg'
+            name:'dino',
+            img: 'dino100.jpg'
         },
         {
             name:'frog',
@@ -75,33 +75,88 @@ const shuffledDeck = (array) => {
     }
 }
 
-
+const clickedCards = [];
+const clickedCardsId = [];
+const doneCards = [];
+let clicks = 0;
+let moves = 0;
 shuffledDeck(deckArray);
 
 
-const namesDeck =deckArray.map((cards) => {return cards.name});
 
 
-//TODO : make this one better
 const createDeck = () => {
+    const namesDeck =deckArray.map((cards) => {return cards.name});
+
     for(let i=0;i<namesDeck.length;i++) {
         const card = document.createElement('img');
 
-        // card.setAttribute('src',deckArray[i].img)
-        card.setAttribute('src','blank.jpg')
+        card.setAttribute('src','tile.jpg')
         card.setAttribute('data-id',i);
+        card.setAttribute('class','singleBox');
+
+        card.addEventListener('click',e =>{
+            clickCounter();
+        })
+
+
+        card.addEventListener('click', e =>{
+
+            card.setAttribute('src',deckArray[i].img)
+            clickedCards.push(namesDeck[i]);
+            clickedCardsId.push(i);
+
+            if(clickedCards.length === 2)
+            {
+                setTimeout(scoreCheck,300);
+            }
+        })
 
         box.append(card);
+
     }
 }
 
-const images = document.querySelectorAll("img");
+const scoreCheck = () =>{
+    const cards = document.querySelectorAll('img');
+    if(clickedCards[0] === clickedCards[1]) {
+        doneCards.push(clickedCards);
+    }
+    else {
+        cards[clickedCardsId[0]].setAttribute('src','tile.jpg');
+        cards[clickedCardsId[1]].setAttribute('src','tile.jpg');
+    }
+    clickedCards.length = [];
+    clickedCardsId.length = [];
+    if(doneCards.length === deckArray.length/2){
+        alert("You won !");
+        location.reload();
+    }
+}
 
-const click = () =>{
-
-
-
+const clickCounter = () =>{
+    clicks +=1;
+    moves=clicks/2;
+    moves=Math.floor(moves);
+    document.getElementById("clicks").innerHTML = moves;
 }
 
 
+const deckRemove = () => {
+
+    const card = document.querySelectorAll("#singleBox")
+    card.remove();
+
+}
+const reset = () =>{
+    deckRemove();
+    // moves = 0;
+    // doneCards.length =[];
+    // clickedCards.length = [];
+    // clickedCardsId.length = [];
+    // clicks = 0;
+    // shuffledDeck(deckArray);
+    // createDeck();
+
+}
 createDeck();
