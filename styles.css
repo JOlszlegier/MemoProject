@@ -38,3 +38,15 @@ html, body {
 .buttonStyle{
     float: right;
 }
+
+.bodySetting{
+    background-color: #90D7FF;
+}
+
+.btn-primary{
+    color: white !important;
+    background-color: #22577A !important;
+    border: #22577A;
+    box-shadow: #22577A;
+}
+
