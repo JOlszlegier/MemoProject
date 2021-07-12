@@ -80,7 +80,6 @@ let clicks = 0;
 let moves = 0;
 shuffledDeck(deckArray);
 
-
 let namesDeck =deckArray.map((cards) => {return cards.name});
 
 const createDeck = () => {
@@ -97,7 +96,6 @@ const createDeck = () => {
             clickCounter();
         })
 
-
         card.addEventListener('click', e =>{
 
             card.setAttribute('src',deckArray[i].img)
@@ -112,6 +110,7 @@ const createDeck = () => {
 
         box.append(card);
 
+
     }
 }
 
@@ -124,12 +123,15 @@ const scoreCheck = () =>{
         cards[clickedCardsId[0]].setAttribute('src','tile.jpg');
         cards[clickedCardsId[1]].setAttribute('src','tile.jpg');
     }
+
     clickedCards.length = [];
     clickedCardsId.length = [];
+
     if(doneCards.length === deckArray.length/2){
         alert("You won !");
         location.reload();
     }
+
 }
 
 const clickCounter = () =>{
@@ -138,9 +140,6 @@ const clickCounter = () =>{
     moves=Math.floor(moves);
     document.getElementById("clicks").innerHTML = moves;
 }
-
-
-
 
 
 const reset = () => {
@@ -160,4 +159,5 @@ const reset = () => {
     createDeck()
     document.getElementById("clicks").innerHTML = moves;
 }
+
 createDeck();
