@@ -7,8 +7,7 @@ html, body {
     font-size: 20px;
 }
 
-.mainFlex
-{
+.main-flex {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -16,7 +15,7 @@ html, body {
     flex-direction: column;
     text-align: left;
 }
-.gameBox{
+.game-box{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -26,25 +25,21 @@ html, body {
     box-shadow: 0 0 3em grey;
 }
 
-.singleBox{
+.single-box{
     border: black  solid 1px;
 }
 
-.scoreBox{
+.score-box{
     width: 400px;
 }
 
-.buttonStyle{
+.button-style{
     float: right;
 }
 
-.bodySetting{
-    background-color: #90D7FF;
-}
-
 .btn-primary{
-    color: white !important;
-    background-color: #22577A !important;
+    color: white ;
+    background-color: #22577A ;
     border: #22577A;
     box-shadow: #22577A;
 }

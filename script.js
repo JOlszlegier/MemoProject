@@ -1,4 +1,4 @@
-const box = document.querySelector(".gameBox");
+const box = document.querySelector(".game-box");
 
 const deckArray = [
         {
@@ -90,7 +90,7 @@ const createDeck = () => {
 
         card.setAttribute('src','tile.jpg')
         card.setAttribute('id',i.toString());
-        card.setAttribute('class','singleBox');
+        card.setAttribute('class','single-box');
 
         card.addEventListener('click',e =>{
             clickCounter();
