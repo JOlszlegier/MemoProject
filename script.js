@@ -3,8 +3,9 @@ let clickedCards = [];
 let clickedCardsId = [];
 let doneCards = [];
 let clicks = 0;
-let moves = 0;
 let namesDeck = []
+let moves = 0;
+
 const deckArray = [
         {
             name:'dog',
