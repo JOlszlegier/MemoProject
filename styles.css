@@ -44,3 +44,15 @@ html, body {
     box-shadow: #22577A;
 }
 
+@media only screen and (max-width: 420px){
+    .game-box{
+        width: 306px;
+        height: 604px;
+    }
+    .score-box{
+        width: 306px;
+        font-size: 20px;
+        height: 20px;
+    }
+}
+
