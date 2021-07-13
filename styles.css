@@ -46,13 +46,17 @@ html, body {
 
 @media only screen and (max-width: 420px){
     .game-box{
-        width: 306px;
-        height: 604px;
+        width: 208px;
+        height: 208px;
     }
     .score-box{
-        width: 306px;
-        font-size: 20px;
+        width: 210px;
+        font-size: 17px;
         height: 20px;
+    }
+    .btn-sm {
+        padding-right: 0.25rem;
+        padding-left: 0.25rem;
     }
 }
 
