@@ -5,6 +5,11 @@ let doneCards = [];
 let clicks = 0;
 let moves = 0;
 let namesDeck = []
+let deck = 0;
+let mobileMode = 0;
+let tileName = 0;
+const mobile = window.matchMedia( "(max-width: 430px)" )
+
 const deckArray = [
         {
             name:'dog',
@@ -161,13 +166,7 @@ const deckMapping = (array) =>{
 }
 
 const attributeSetting = (card,i) =>{
-    card.setAttribute('src','pictures/tile.jpg')
-    card.setAttribute('id',i.toString());
-    card.setAttribute('class','single-box');
-}
-
-const attributeSettingMobile = (card,i) =>{
-    card.setAttribute('src','pictures/tileSmall.jpg')
+    card.setAttribute('src',tileName)
     card.setAttribute('id',i.toString());
     card.setAttribute('class','single-box');
 }
@@ -184,12 +183,7 @@ const cardListener = (card,i,array) =>{
     })
 }
 
-
-
 const scoreCheck = () =>{
-    let picture = 0;
-    if (mobile.matches) picture= 'pictures/tileSmall.jpg';
-    else picture = 'pictures/tile.jpg';
 
     const cards = document.querySelectorAll('img');
     if(clickedCards[0] === clickedCards[1]) {
@@ -197,14 +191,14 @@ const scoreCheck = () =>{
         doneCards.push(clickedCards[0]);
     }
     else if(doneCards.find(element => element===clickedCards[0])){
-        cards[clickedCardsId[1]].setAttribute('src',picture);
+        cards[clickedCardsId[1]].setAttribute('src',tileName);
     }
     else if (doneCards.find(element => element===clickedCards[1])){
-        cards[clickedCardsId[0]].setAttribute('src',picture);
+        cards[clickedCardsId[0]].setAttribute('src',tileName);
     }
     else {
-        cards[clickedCardsId[0]].setAttribute('src',picture);
-        cards[clickedCardsId[1]].setAttribute('src',picture);
+        cards[clickedCardsId[0]].setAttribute('src',tileName);
+        cards[clickedCardsId[1]].setAttribute('src',tileName);
     }
     arrayErase();
     if(doneCards.length === deckArray.length){
@@ -216,8 +210,7 @@ const scoreCheck = () =>{
 const createDeck = (array,mobile) => {
     for(let i=0;i<namesDeck.length;i++) {
         const card = document.createElement('img');
-        if (mobile === 1) attributeSettingMobile(card,i);
-        else   attributeSetting(card,i);
+        attributeSetting(card,i);
         cardListener(card,i,array);
         box.append(card);
     }
@@ -230,18 +223,22 @@ const clickCounter = () =>{
     document.getElementById("clicks").innerHTML = moves;
 }
 
-const reset = () => {
-    const box = document.querySelector(".game-box");
-    let deck = 0;
-    let mobileMode = 0;
+const mobileSet = () =>{
     if(mobile.matches){
         deck = deckArrayMobile;
         mobileMode = 1;
+        tileName = 'pictures/tileSmall.jpg';
     }
     else{
         deck = deckArray;
         mobileMode = 0;
+        tileName = 'pictures/tile.jpg';
     }
+}
+const reset = () => {
+    const box = document.querySelector(".game-box");
+    mobileSet();
+
     while(box.firstChild){
         box.removeChild(box.firstChild);
     }
@@ -253,7 +250,7 @@ const reset = () => {
     document.getElementById("clicks").innerHTML = moves;
 }
 
-const mobile = window.matchMedia( "(max-width: 430px)" )
+mobileSet();
 if(mobile.matches){
     shuffledDeck(deckArrayMobile);
     deckMapping(deckArrayMobile);
