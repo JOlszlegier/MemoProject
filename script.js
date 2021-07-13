@@ -91,7 +91,7 @@ const variableErasing = () =>{
     clicks = 0;
 }
 const deckMapping = () =>{
-    namesDeck = deckArray.map((cards) => {return cards.name});
+    namesDeck = deckArray.map(cards => cards.name);
 }
 
 const attributeSetting = (card,i) =>{
@@ -101,7 +101,7 @@ const attributeSetting = (card,i) =>{
 }
 
 const cardListener = (card,i) =>{
-    card.addEventListener('click', e =>{
+    card.addEventListener('click', () =>{
         clickCounter();
         card.setAttribute('src',deckArray[i].img)
         clickedCards.push(namesDeck[i]);
