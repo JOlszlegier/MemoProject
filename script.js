@@ -9,67 +9,67 @@ let moves = 0;
 const deckArray = [
         {
             name:'dog',
-            img: 'Dog100.jpg'
+            img: 'Pictures/Dog100.jpg'
         },
         {
             name:'dog',
-            img: 'Dog100.jpg'
+            img: 'Pictures/Dog100.jpg'
         },
         {
             name:'bug',
-            img: 'Bug100.jpg'
+            img: 'Pictures/Bug100.jpg'
         },
         {
             name:'bug',
-            img: 'Bug100.jpg'
+            img: 'Pictures/Bug100.jpg'
         },
         {
             name:'parrots',
-            img: 'Parrots100.jpg'
+            img: 'Pictures/Parrots100.jpg'
         },
         {
             name:'parrots',
-            img: 'Parrots100.jpg'
+            img: 'Pictures/Parrots100.jpg'
         },
         {
             name:'dino',
-            img: 'dino100.jpg'
+            img: 'Pictures/dino100.jpg'
         },
         {
             name:'dino',
-            img: 'dino100.jpg'
+            img: 'Pictures/dino100.jpg'
         },
         {
             name:'frog',
-            img: 'Frog100.jpg'
+            img: 'Pictures/Frog100.jpg'
         },
         {
             name:'frog',
-            img: 'Frog100.jpg'
+            img: 'Pictures/Frog100.jpg'
         },
         {
             name:'koala',
-            img: 'koala100.jpg'
+            img: 'Pictures/koala100.jpg'
         },
         {
             name:'koala',
-            img: 'koala100.jpg'
+            img: 'Pictures/koala100.jpg'
         },
         {
             name:'pig',
-            img: 'Pig100.jpg'
+            img: 'Pictures/Pig100.jpg'
         },
         {
             name:'pig',
-            img: 'Pig100.jpg'
+            img: 'Pictures/Pig100.jpg'
         },
         {
             name:'howl',
-            img: 'Howl100.jpg'
+            img: 'Pictures/Howl100.jpg'
         },
         {
             name:'howl',
-            img: 'Howl100.jpg'
+            img: 'Pictures/Howl100.jpg'
         },
 ]
 
@@ -95,7 +95,7 @@ const deckMapping = () =>{
 }
 
 const attributeSetting = (card,i) =>{
-    card.setAttribute('src','tile.jpg')
+    card.setAttribute('src','Pictures/tile.jpg')
     card.setAttribute('id',i.toString());
     card.setAttribute('class','single-box');
 }
@@ -119,14 +119,14 @@ const scoreCheck = () =>{
         doneCards.push(clickedCards[0]);
     }
     else if(doneCards.find(element => element===clickedCards[0])){
-        cards[clickedCardsId[1]].setAttribute('src','tile.jpg');
+        cards[clickedCardsId[1]].setAttribute('src','Pictures/tile.jpg');
     }
     else if (doneCards.find(element => element===clickedCards[1])){
-        cards[clickedCardsId[0]].setAttribute('src','tile.jpg');
+        cards[clickedCardsId[0]].setAttribute('src','Pictures/tile.jpg');
     }
     else {
-        cards[clickedCardsId[0]].setAttribute('src','tile.jpg');
-        cards[clickedCardsId[1]].setAttribute('src','tile.jpg');
+        cards[clickedCardsId[0]].setAttribute('src','Pictures/tile.jpg');
+        cards[clickedCardsId[1]].setAttribute('src','Pictures/tile.jpg');
     }
     arrayErase();
     if(doneCards.length === deckArray.length){
