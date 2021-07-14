@@ -110,7 +110,7 @@ const cardListener = (card,i) =>{
             clickedCardsId.push(i);
         }
         if(clickedCards.length === 2) {
-            setTimeout(scoreCheck,500);
+            setTimeout(scoreCheck,1000);
         }
     })
 }
