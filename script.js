@@ -5,7 +5,7 @@ let doneCards = [];
 let clicks = 0;
 let namesDeck = []
 let moves = 0;
-
+let filteredArray = [];
 const deckArray = [
         {
             name:'dog',
@@ -102,12 +102,14 @@ const attributeSetting = (card,i) =>{
 
 const cardListener = (card,i) =>{
     card.addEventListener('click', () =>{
-        clickCounter();
-        card.setAttribute('src',deckArray[i].img)
-        clickedCards.push(namesDeck[i]);
-        clickedCardsId.push(i);
+        if(clickedCards.length !== 2){
+            clickCounter();
+            card.setAttribute('src',deckArray[i].img)
+            clickedCards.push(namesDeck[i]);
+            clickedCardsId.push(i);
+        }
         if(clickedCards.length === 2) {
-            setTimeout(scoreCheck,300);
+            setTimeout(scoreCheck,500);
         }
     })
 }
@@ -129,7 +131,8 @@ const scoreCheck = () =>{
         cards[clickedCardsId[1]].setAttribute('src','Pictures/tile.jpg');
     }
     arrayErase();
-    if(doneCards.length === deckArray.length){
+    filteredArray = doneCards.filter(e => e != null);
+    if(filteredArray.length === deckArray.length){
         alert("You won !");
         reset();
     }
