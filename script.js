@@ -110,11 +110,16 @@ const cardListener = (card,i) =>{
             clickedCardsId.push(i);
         }
         if(clickedCards.length === 2) {
-            setTimeout(scoreCheck,700);
+            firstCheck(clickedCards);
         }
     })
 }
 
+const firstCheck = (clickedCards) =>{
+    if(clickedCards[0] !== clickedCards[1]){
+        setTimeout(scoreCheck,700)
+    }else scoreCheck();
+}
 const scoreCheck = () =>{
     const cards = document.querySelectorAll('img');
     if((clickedCards[0] === clickedCards[1]) && (clickedCardsId[0] !==clickedCardsId[1])) {
