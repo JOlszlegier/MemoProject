@@ -6,6 +6,7 @@ let clicksCounter = 0;
 let namesDeck = []
 let movesCounter = 0;
 let filteredArray = [];
+
 const deckArray = [
         {
             name:'dog',
@@ -102,7 +103,7 @@ const attributeSetting = (card,i) =>{
 
 const cardListener = (card,i) =>{
     card.addEventListener('click', () =>{
-        if(clickedCards.length !== 2){
+        if(clickedCards.length !== 2 ){
             clickCounter();
             card.setAttribute('src',deckArray[i].img)
             clickedCards.push(namesDeck[i]);
@@ -116,7 +117,7 @@ const cardListener = (card,i) =>{
 
 const scoreCheck = () =>{
     const cards = document.querySelectorAll('img');
-    if(clickedCards[0] === clickedCards[1]) {
+    if((clickedCards[0] === clickedCards[1]) && (clickedCardsId[0] !==clickedCardsId[1])) {
         doneCards.push(clickedCards[0]);
         doneCards.push(clickedCards[0]);
     }
