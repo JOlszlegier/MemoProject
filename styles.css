@@ -1,4 +1,4 @@
-html, body {
+html,body {
     margin: 0;
     height: 100%;
     overflow: hidden;
@@ -51,12 +51,17 @@ html, body {
     }
     .score-box{
         width: 206px;
-        font-size: 20px;
+        font-size: 16px;
         height: 20px;
     }
     .single-box{
         width: 50px;
         height: 50px;
+    }
+    .btn-sm{
+        padding: 0.15rem 0.4rem;
+        font-size: 0.875rem;
+        border-radius: 0.1rem;
     }
 }
 

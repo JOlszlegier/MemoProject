@@ -2,9 +2,9 @@ const box = document.querySelector(".game-box");
 let clickedCards = [];
 let clickedCardsId = [];
 let doneCards = [];
-let clicks = 0;
+let clicksCounter = 0;
 let namesDeck = []
-let moves = 0;
+let movesCounter = 0;
 let filteredArray = [];
 const deckArray = [
         {
@@ -86,9 +86,9 @@ const arrayErase = () =>{
 }
 
 const variableErasing = () =>{
-    moves = 0;
+    movesCounter = 0;
     doneCards =[];
-    clicks = 0;
+    clicksCounter = 0;
 }
 const deckMapping = () =>{
     namesDeck = deckArray.map(cards => cards.name);
@@ -148,10 +148,10 @@ const createDeck = () => {
 }
 
 const clickCounter = () =>{
-    clicks +=1;
-    moves=clicks/2;
-    moves=Math.floor(moves);
-    document.getElementById("clicks").innerHTML = moves;
+    clicksCounter +=1;
+    movesCounter=clicksCounter/2;
+    movesCounter=Math.floor(movesCounter);
+    document.getElementById("clicksCounter").innerHTML = movesCounter;
 }
 
 const reset = () => {
@@ -164,7 +164,7 @@ const reset = () => {
     shuffledDeck(deckArray);
     deckMapping()
     createDeck()
-    document.getElementById("clicks").innerHTML = moves;
+    document.getElementById("clicksCounter").innerHTML = movesCounter;
 }
 
 shuffledDeck(deckArray);
